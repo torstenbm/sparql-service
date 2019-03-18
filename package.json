@@ -1,0 +1,22 @@
+{
+  "name": "sparql-service",
+  "version": "1.0.0",
+  "description": "SparQL-service using node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torstenbm/sparql-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torstenbm/sparql-service/issues"
+  },
+  "homepage": "https://github.com/torstenbm/sparql-service#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
