@@ -36,8 +36,16 @@ const queryDispatcher = new SPARQLQueryDispatcher( endpointUrl );
 queryDispatcher.query( sparqlQuery ).then( wikiData => {
     console.log("got here");
     console.log(wikiData.results.bindings);
+
+    var resString = ``;
+
+    wikiData.results.bindings.forEach(item => {
+        resString += `<img src="${item.pic.value}" />`
+    })
+
     app.get('/', function (req, res) {
-        res.send(JSON.stringify(wikiData.results.bindings));
+        // res.send(JSON.stringify(wikiData.results.bindings));
+        res.send(resString);
        });
     app.listen(port, function () {
     console.log(`Example app listening on port`, port);
