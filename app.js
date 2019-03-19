@@ -4,8 +4,6 @@ const fetch = require("node-fetch");
 var port = process.env.PORT || 3000;
 var app = express();
 
-var wikiData = "Heyhey";
-
 class SPARQLQueryDispatcher {
 	constructor( endpoint ) {
 		this.endpoint = endpoint;
@@ -40,12 +38,15 @@ queryDispatcher.query( sparqlQuery ).then( wikiData => {
     var resString = ``;
 
     wikiData.results.bindings.forEach(item => {
-        resString += `<img src="${item.pic.value}" />`
+        resString += `<img style="width: 51%; margin: 10px auto" src="${item.pic.value}" />`
     })
 
     app.get('/', function (req, res) {
-        // res.send(JSON.stringify(wikiData.results.bindings));
-        res.send(resString);
+        res.send(`
+        <div style="text-align: center">
+            ${resString}
+        </div>
+        `);
        });
     app.listen(port, function () {
     console.log(`Example app listening on port`, port);
