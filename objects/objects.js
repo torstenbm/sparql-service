@@ -20,6 +20,7 @@ class QueryFactory {
     }
 }
 
+// TODO: implement database interface in repository
 class QueryRepository {
     constructor(DBConfig){}
     saveSPARQLQueries(){}

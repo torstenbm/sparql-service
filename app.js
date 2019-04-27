@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-// Define SPARQL endpoint (Could make dynamic in the future)
+// Define SPARQL endpoint, TODO: Make dynamic
 const endpointUrl = 'https://query.wikidata.org/sparql';
 
 
