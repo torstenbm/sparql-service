@@ -1,16 +1,3 @@
-class SPARQLQueryDispatcher {
-	constructor( endpoint ) {
-		this.endpoint = endpoint;
-	}
-
-	query( sparqlQuery ) {
-		const fullUrl = this.endpoint + '?query=' + encodeURIComponent( sparqlQuery );
-		const headers = { 'Accept': 'application/sparql-results+json' };
-
-		return fetch( fullUrl, { headers } ).then( body => body.json() );
-	}
-}
-
 class QueryResult {
     constructor(result){
         this.result = result;
@@ -39,4 +26,4 @@ class QueryRepository {
     getSPARQLQueries(){}
 }
 
-module.exports = {SPARQLQueryDispatcher, QueryFactory, QueryRepository}
+module.exports = { QueryFactory, QueryRepository }
