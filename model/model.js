@@ -1,9 +1,3 @@
-class QueryResult {
-    constructor(result){
-        this.result = result;
-    }
-}
-
 class SPARQLQuery {
 	constructor(queryString, queryResult) {
         this.queryString = queryString;
@@ -12,7 +6,6 @@ class SPARQLQuery {
         this.setResult = result => { this.queryResult = result }
     }
 }
-
 
 class QueryFactory {
     createQueryObject(queryString, queryResult) {

@@ -1,5 +1,5 @@
 // Imports
-var { QueryFactory, QueryRepository  } = require("./objects/objects");
+var { QueryFactory, QueryRepository  } = require("./model/model");
 var express = require('express');
 var bodyParser = require("body-parser");
 const fetch = require("node-fetch");
@@ -45,5 +45,5 @@ app.post("/runQuery", (request, response) => {
 
 // Start listening
 app.listen(port, function () {
-    console.log(`SPARQL Query micro service listening on port`, port);
+    console.log(`SPARQL Query microservice listening on port`, port);
 });
