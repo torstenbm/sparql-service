@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 
 
 // Config
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3020;
 var app = express();
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -46,6 +46,9 @@ app.post("/runQuery", (request, response) => {
     .then(queryObject => response.send(queryObject.queryResult.results.bindings))
 })
 
+app.get("/", (request, response) => {
+    response.send("App running");
+})
 
 // Start listening
 app.listen(port, function () {
