@@ -47,7 +47,7 @@ app.post("/runQuery", (request, response) => {
 })
 
 app.get("/", (request, response) => {
-    response.send("App running");
+    response.send("SPARQL-service is running");
 })
 
 // Start listening
